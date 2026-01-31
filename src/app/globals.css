@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Chic/Elegant Theme */
+  --background: #FAFAFA;
+  /* Off-white background */
+  --foreground: #2D2D2D;
+  /* Dark charcoal text */
+
+  --primary: #C58989;
+  /* Dusty Rose */
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #E8D3D3;
+  /* Pale Pink */
+  --secondary-foreground: #4A3B3B;
+
+  --accent: #D4AF37;
+  /* Muted Gold */
+  --accent-foreground: #FFFFFF;
+
+  --muted: #F2F0F0;
+  --muted-foreground: #737373;
+
+  --card: #FFFFFF;
+  --card-foreground: #2D2D2D;
+
+  --border: #E5E5E5;
+  --input: #E5E5E5;
+  --ring: #C58989;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+
+  --animate-scroll: scroll 30s linear infinite;
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
+
+  /* Optional Dark Mode - keeping it elegant dark */
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1A1A1A;
+    --foreground: #EDEDED;
+    --primary: #D4A5A5;
+    --primary-foreground: #1A1A1A;
+    --secondary: #2D2D2D;
+    --secondary-foreground: #E8D3D3;
+    --card: #242424;
+    --card-foreground: #EDEDED;
+    --border: #333333;
+    --input: #333333;
+    --ring: #D4A5A5;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif), serif;
 }
